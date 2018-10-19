@@ -1,0 +1,28 @@
+<mat-card class="error" *ngIf="errorMessage && errorMessage.length > 0">
+    <mat-card-header>
+        <mat-card-title><h4>Error: {{ errorMessage }}</h4></mat-card-title>
+    </mat-card-header>
+</mat-card>
+<br>
+<mat-card>
+  <mat-card-header>
+      <img mat-card-avatar src="https://media.giphy.com/media/2s0ouek7HJmWQ/giphy.gif">
+      <mat-card-title><h3>Let's send some emails! 👾</h3></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="example-container">
+        <mat-form-field>
+            <textarea matInput class="email-input" placeholder="Your MongoDB Query 👽" name="mongo_query" [(ngModel)]="inputMongoQuery" required></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Email Subject (Keep it short)" name="email_subject" [(ngModel)]="inputEmailSubject" required>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea class="email-input" matInput placeholder="Your Email" name="email_text" [(ngModel)]="inputEmailText" required></textarea>
+        </mat-form-field>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="submitEmail()">Send Email</button>
+  </mat-card-actions>
+</mat-card>
