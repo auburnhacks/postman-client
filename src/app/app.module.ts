@@ -9,15 +9,21 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { EmailComponent } from './email/email.component';
 import { EmailService } from './services/email.service';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes:Routes = [
-  { path: 'email', component: EmailComponent}
+  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'email', component: EmailComponent, canActivate: [ AuthGuard ]},
+  { path: '**', component: LoginComponent }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmailComponent
+    EmailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

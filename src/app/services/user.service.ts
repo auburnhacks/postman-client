@@ -25,6 +25,13 @@ export class UserService {
    return undefined;
  }
 
+ public isAuthenticated(): Promise<boolean> | boolean {
+    if (this.getToken() !== undefined) {
+      return true;
+    }
+    return false;
+ }
+
  public login(username: string, password: string): Promise<User> {
    return new Promise<User>((resolve, reject) => {
      this.http

@@ -1,0 +1,11 @@
+.center{
+    width: 45%;
+    height: 45%;
+}
+  
+.main-div{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
