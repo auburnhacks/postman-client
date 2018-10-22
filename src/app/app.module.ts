@@ -13,7 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes:Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'email', component: EmailComponent, canActivate: [ AuthGuard ]},
   { path: '**', component: LoginComponent }
@@ -27,10 +27,10 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
     HttpClientModule,
     MaterialModule,
     FormsModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     UserService,
