@@ -5,6 +5,11 @@
     </mat-card-header>
 </mat-card>
 <br>
+<mat-card class="success" *ngIf="successMessage && successMessage.length > 0">
+    <mat-card-header>
+        <mat-card-title><h4>Success: {{ successMessage }}</h4></mat-card-title>
+    </mat-card-header>
+</mat-card>
 <mat-card>
     <mat-card-header>
         <img src="https://media.giphy.com/media/2s0ouek7HJmWQ/giphy.gif" width="150" height="150">
