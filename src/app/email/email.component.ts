@@ -43,7 +43,7 @@ export class EmailComponent implements OnInit, OnChanges {
       .queueEmailJob(emailJob)
       .then((resp: IEmailJobQueueResponse) => {
         if (resp !== undefined) {
-          this.successMessage = "You're email is being sent";
+          this.successMessage = "You're email is being sent to " + emailsResp.emails.length + "people 🤡";
         }
       },
       (reason) => {
