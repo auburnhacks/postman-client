@@ -15,4 +15,5 @@ export interface IEmailJobQueueRequest {
     to_emails: Array<string>;
     subject: string;
     email_text: string;
+    is_html: boolean;
 }

@@ -27,6 +27,7 @@
                 <textarea class="email-input" matInput placeholder="Your Email" name="email_text" [(ngModel)]="inputEmailText" required></textarea>
             </mat-form-field>
         </div>
+        <input type="checkbox" [(ngModel)]="isHTML" /> HTML ?
     </mat-card-content>
   <mat-card-actions>
       <button mat-raised-button color="primary" (click)="submitEmail()">Send Email</button>

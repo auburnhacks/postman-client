@@ -16,6 +16,7 @@ export class EmailComponent implements OnInit, OnChanges {
   public inputEmailText: string;
   public errorMessage: string;
   public successMessage: string;
+  public isHTML: boolean;
 
   constructor(private http: HttpClient, private router: Router, private emailService: EmailService) { }
 
@@ -27,7 +28,7 @@ export class EmailComponent implements OnInit, OnChanges {
   }
 
   submitEmail(): void {
-    console.log(this.inputMongoQuery, this.inputEmailSubject, this.inputEmailText);
+    console.log(this.inputMongoQuery, this.inputEmailSubject, this.inputEmailText, this.isHTML);
 
     // validate the mongo request
     this.emailService
@@ -37,7 +38,8 @@ export class EmailComponent implements OnInit, OnChanges {
       let emailJob: IEmailJobQueueRequest = {
         to_emails: emailsResp.emails,
         subject: this.inputEmailSubject,
-        email_text: this.inputEmailText
+        email_text: this.inputEmailText,
+        is_html: this.isHTML,
       };
       this.emailService
       .queueEmailJob(emailJob)

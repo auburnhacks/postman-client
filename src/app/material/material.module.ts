@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { MatCardModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatCheckboxModule, MatGridListModule, MatSidenavModule, MatProgressSpinnerModule, MatIconModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatCardModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatCheckboxModule, MatGridListModule, MatSidenavModule, MatProgressSpinnerModule, MatIconModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule } from '@angular/material';
 
 @NgModule({
     imports: [
@@ -19,7 +19,8 @@ import { MatCardModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatChe
         MatIconModule,
         MatFormFieldModule,
         MatInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatSlideToggleModule,
     ],
     exports: [
         MatCardModule,
@@ -33,7 +34,8 @@ import { MatCardModule, MatButtonModule, MatMenuModule, MatToolbarModule, MatChe
         MatIconModule,
         MatFormFieldModule,
         MatInputModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatSlideToggleModule,
     ]
 })
 
